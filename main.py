@@ -46,7 +46,7 @@ def text_mess(message):
     if "флагманская" in message.text.lower():
         bot.reply_to(message, "https://cccstore.ru/catalog/kubiki-rubika/3x3/filter/price-base-from-4000/apply/")
     if " - nick" in message.text.lower():
-        if (len(message.text.lower()[:-7]) <= 20) and (not(message.text.lower()[0].isdigit())) and ("bot" in message.text.lower()):
+        if (len(message.text.lower()[:-7]) <= 20) and (not(message.text.lower()[0].isdigit())) and (message.text.lower()[-10:-7] == "bot"):
             bot.send_message(message.chat.id, "Никнейм корректный")
         else:
             bot.send_message(message.chat.id, "Никнейм некорректный")
